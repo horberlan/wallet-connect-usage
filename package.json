@@ -1,0 +1,25 @@
+{
+  "name": "nuxt-app",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare",
+    "prepare": "panda codegen"
+  },
+  "dependencies": {
+    "@nuxt/kit": "^3.11.1",
+    "@web3modal/ethers5": "^4.1.1",
+    "ethers": "5.7.2",
+    "nuxt": "^3.11.1",
+    "sass": "^1.72.0",
+    "vue": "^3.4.21",
+    "vue-router": "^4.3.0"
+  },
+  "devDependencies": {
+    "@pandacss/dev": "^0.36.1"
+  }
+}
