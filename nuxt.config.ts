@@ -14,5 +14,10 @@ export default defineNuxtConfig({
     plugins: {
       '@pandacss/dev/postcss': {},
     }
+  },
+  runtimeConfig: {
+    public: {
+      walletProjectId: process.env.NUXT_PUBLIC_WALLET_PROJECT_ID,
+    }
   }
 })

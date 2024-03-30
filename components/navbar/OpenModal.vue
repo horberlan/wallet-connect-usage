@@ -1,8 +1,10 @@
 <script setup lang="ts">
 import { createWeb3Modal, defaultConfig } from "@web3modal/ethers5/vue";
+import { css } from "~/styled-system/css";
 
-const projectId = String(process.env.WALLET_PROJECT_ID);
-console.log(projectId)
+const config = useRuntimeConfig();
+const projectId: Ref<string | undefined> = ref(config.public.walletProjectId);
+
 const mainnet = {
   chainId: 1,
   name: "Ethereum",
@@ -14,7 +16,7 @@ const mainnet = {
 const metadata = {
   name: "My Website",
   description: "My Website description",
-  url: "https://mywebsite.com",
+  url: "http://localhost:3000",
   icons: ["https://avatars.mywebsite.com/"],
 };
 
@@ -33,12 +35,29 @@ const ethersConfig = defaultConfig({
 const modal = createWeb3Modal({
   ethersConfig,
   chains: [mainnet],
-  projectId,
+  projectId: String(projectId.value),
   enableAnalytics: true, // Optional - defaults to your Cloud configuration
   enableOnramp: true, // Optional - false as default
+});
+
+watchEffect(() => {
+  if (!projectId.value)
+    projectId.value = config.public.walletProjectId as string;
 });
 </script>
 
 <template>
-  <w3m-button />
+  <button
+    @click="modal.open()"
+    :class="
+      css({
+        background: 'red',
+        borderRadius: '5px',
+        padding: '10px 10px',
+        cursor: 'pointer',
+      })
+    "
+  >
+    {{ projectId ?? "you are not logged in" }}
+  </button>
 </template>

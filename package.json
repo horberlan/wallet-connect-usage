@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@nuxt/kit": "^3.11.1",
+    "@web3modal/ethers": "^4.1.1",
     "@web3modal/ethers5": "^4.1.1",
     "ethers": "5.7.2",
     "nuxt": "^3.11.1",

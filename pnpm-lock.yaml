@@ -8,6 +8,9 @@ dependencies:
   '@nuxt/kit':
     specifier: ^3.11.1
     version: 3.11.1
+  '@web3modal/ethers':
+    specifier: ^4.1.1
+    version: 4.1.1(@web3modal/wallet@4.1.1)(ethers@5.7.2)(typescript@5.4.3)
   '@web3modal/ethers5':
     specifier: ^4.1.1
     version: 4.1.1(@web3modal/wallet@4.1.1)(ethers@5.7.2)(typescript@5.4.3)
@@ -3556,6 +3559,49 @@ packages:
     resolution: {integrity: sha512-0ao7uVEZfXNedhsFN340pjoCKTIvDDgiYLqxBXGnorjCHz3y+SHQCSfad+gGBSvW7UQ3OwXZ7427mqFy1rQqDg==}
     peerDependencies:
       ethers: '>=4.1.0 <6.0.0'
+    dependencies:
+      '@coinbase/wallet-sdk': 3.9.1
+      '@walletconnect/ethereum-provider': 2.11.1(react@18.2.0)
+      '@web3modal/polyfills': 4.1.1
+      '@web3modal/scaffold': 4.1.1(@web3modal/wallet@4.1.1)(react@18.2.0)
+      '@web3modal/scaffold-react': 4.1.1(@web3modal/wallet@4.1.1)(react-dom@18.2.0)(react@18.2.0)
+      '@web3modal/scaffold-utils': 4.1.1(react@18.2.0)
+      '@web3modal/scaffold-vue': 4.1.1(@web3modal/wallet@4.1.1)(react@18.2.0)(vue@3.4.21)
+      ethers: 5.7.2
+      valtio: 1.11.2(react@18.2.0)
+    optionalDependencies:
+      '@web3modal/siwe': 4.1.1(react@18.2.0)
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
+      vue: 3.4.21(typescript@5.4.3)
+    transitivePeerDependencies:
+      - '@azure/app-configuration'
+      - '@azure/cosmos'
+      - '@azure/data-tables'
+      - '@azure/identity'
+      - '@azure/keyvault-secrets'
+      - '@azure/storage-blob'
+      - '@capacitor/preferences'
+      - '@netlify/blobs'
+      - '@planetscale/database'
+      - '@react-native-async-storage/async-storage'
+      - '@types/react'
+      - '@upstash/redis'
+      - '@vercel/kv'
+      - '@web3modal/wallet'
+      - bufferutil
+      - encoding
+      - ioredis
+      - supports-color
+      - typescript
+      - uWebSockets.js
+      - utf-8-validate
+    dev: false
+
+  /@web3modal/ethers@4.1.1(@web3modal/wallet@4.1.1)(ethers@5.7.2)(typescript@5.4.3):
+    resolution: {integrity: sha512-GLGYAGmJgAnlNnjEehLFIaPKzyQIQky9UO4gzxNfEl7Mt3p9gHwY5idZzzLlNL+omZMtL8EeZRnsbDOKoYoyaQ==}
+    peerDependencies:
+      ethers: '>=6.0.0'
     dependencies:
       '@coinbase/wallet-sdk': 3.9.1
       '@walletconnect/ethereum-provider': 2.11.1(react@18.2.0)
