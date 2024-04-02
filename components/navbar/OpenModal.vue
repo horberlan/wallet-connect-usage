@@ -3,7 +3,9 @@ import { createWeb3Modal, defaultConfig } from "@web3modal/ethers5/vue";
 import { css } from "~/styled-system/css";
 
 const config = useRuntimeConfig();
+
 const projectId: Ref<string | undefined> = ref(config.public.walletProjectId);
+const logWalletError = ref(false);
 
 const mainnet = {
   chainId: 1,
@@ -41,8 +43,11 @@ const modal = createWeb3Modal({
 });
 
 watchEffect(() => {
-  if (!projectId.value)
+  if (!projectId.value) {
     projectId.value = config.public.walletProjectId as string;
+    logWalletError.value = true;
+  } else logWalletError.value = false;
+  if (logWalletError.value) console.error("your wallet is not logged in");
 });
 </script>
 
@@ -53,11 +58,11 @@ watchEffect(() => {
       css({
         background: 'red',
         borderRadius: '5px',
-        padding: '10px 10px',
+        padding: '1rem',
         cursor: 'pointer',
       })
     "
   >
-    {{ projectId ?? "you are not logged in" }}
+    {{ !projectId ? (logWalletError = true) : projectId }}
   </button>
 </template>

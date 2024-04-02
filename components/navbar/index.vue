@@ -9,9 +9,11 @@
       })
     "
   >
-  <ul>
-    <li> Brand</li>
-  </ul>
+    <ul>
+      <li v-for="(item, index) in menuItems" :key="index">
+        {{ item.label }}
+      </li>
+    </ul>
     <OpenModal />
   </nav>
 </template>
@@ -20,4 +22,9 @@
 import { css } from "styled-system/css";
 
 const OpenModal = defineAsyncComponent(() => import("./OpenModal.vue"));
+const menuItems = [
+  { label: "link", alt: "_to" },
+  { label: "link", alt: "_to" },
+  { label: "link", alt: "_to" },
+];
 </script>
